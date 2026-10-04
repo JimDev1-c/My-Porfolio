@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f3ee">
+  <title>Jephte Iniki — Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #192923;
+      --muted: #68756e;
+      --paper: #f5f3ee;
+      --surface: #fffefa;
+      --line: #e7e5dc;
+      --accent: #b8ef73;
+      --accent-dark: #345b30;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Segoe UI', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .page-shell { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .88rem;
+    }
+    .brand { font-weight: 750; letter-spacing: -.03em; }
+    .availability { color: var(--muted); }
+    .availability::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 9px;
+      border-radius: 50%;
+      background: #7ebd54;
+      box-shadow: 0 0 0 4px #e4efd9;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.45fr .75fr;
+      align-items: center;
+      gap: 56px;
+      padding: 78px 0 72px;
+    }
+    .eyebrow, .section-kicker {
+      margin: 0 0 14px;
+      color: var(--accent-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 650px;
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 8vw, 6.4rem);
+      font-weight: 500;
+      letter-spacing: -.075em;
+      line-height: .98;
+    }
+    h1 span { color: #789b60; }
+    .intro { max-width: 560px; margin-bottom: 27px; color: var(--muted); font-size: 1.08rem; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 19px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-size: .9rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #30443a; }
+    .button.secondary { background: transparent; color: var(--ink); }
+    .button.secondary:hover { background: white; }
+    .portrait-wrap { position: relative; justify-self: center; width: min(100%, 300px); }
+    .portrait-wrap::before {
+      position: absolute;
+      z-index: 0;
+      inset: 17px -15px -15px 17px;
+      border: 1px solid #afbf9e;
+      border-radius: 170px 170px 24px 24px;
+      content: '';
+    }
+    .portrait {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 170px 170px 24px 24px;
+      object-fit: cover;
+      background: #e5e6dc;
+      box-shadow: 0 18px 50px #2533291c;
+    }
+
+    main { padding-bottom: 76px; }
+    .section {
+      padding: 37px 0 41px;
+      border-top: 1px solid var(--line);
+    }
+    .section-heading {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 34px;
+      margin-bottom: 22px;
+    }
+    .section-kicker { margin: 8px 0; }
+    h2 { margin: 0; font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 500; letter-spacing: -.045em; }
+    .section-content { grid-column: 2; }
+    .summary { max-width: 650px; margin: 0; color: var(--muted); font-size: 1.03rem; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      padding: 21px 23px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--surface);
+    }
+    .card h3 { margin-bottom: 5px; font-size: 1rem; }
+    .card p { margin-bottom: 0; color: var(--muted); font-size: .9rem; }
+    .date { color: #718663; font-size: .8rem; font-weight: 700; }
+    .role-list, .skill-list, .certificate-list { margin: 0; padding: 0; list-style: none; }
+    .role-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .role-list li, .skill-list li {
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: .9rem;
+    }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-list li { border-color: #d9e7ce; background: #edf4e8; color: #355238; }
+    .certificate-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+    .certificate-list li { padding: 13px 0; border-bottom: 1px solid var(--line); color: #4f5e55; }
+    .certificate-list li::before { content: '↗'; margin-right: 10px; color: #71935b; }
+    .other-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    footer { padding: 24px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+    @media (max-width: 700px) {
+      .page-shell { width: min(100% - 32px, 560px); }
+      .topbar { padding: 19px 0; }
+      .hero { grid-template-columns: 1fr; gap: 38px; padding: 57px 0 56px; }
+      .portrait-wrap { width: min(68%, 255px); }
+      .section-heading { grid-template-columns: 1fr; gap: 8px; }
+      .section-content { grid-column: 1; }
+      .cards, .certificate-list { grid-template-columns: 1fr; }
+      .section { padding: 30px 0 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Jephte Iniki, home">JI<span aria-hidden="true">.</span></a>
+      <span class="availability">Software development student</span>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Hello, I'm</p>
+          <h1 id="page-title">Jephte <span>Iniki.</span></h1>
+          <p class="intro">A software development student at PrimeTek Academy, curious about building useful digital experiences and growing my skills every day.</p>
+          <div class="hero-links">
+            <a class="button" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="#about">Explore my profile</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="Jephte.PNG" alt="Portrait of Jephte Iniki" width="200" height="200">
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="section-kicker">01 / About</p>
+          <h2 id="about-title">A little about me</h2>
+          <div class="section-content"><p class="summary">I am a student at PrimeTek Academy in software development. I enjoy learning how thoughtful design and technology can come together to solve real problems.</p></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="education-title">
+        <div class="section-heading">
+          <p class="section-kicker">02 / Learning</p>
+          <h2 id="education-title">Education</h2>
+          <div class="section-content cards">
+            <article class="card"><h3>Boniface Primary School</h3><p class="date">2010 — 2015</p></article>
+            <article class="card"><h3>Laurent College &amp; Alexia Complex</h3><p class="date">2015 — 2023</p></article>
+            <article class="card"><h3>University of Kinshasa</h3><p class="date">2023 — 2028</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <p class="section-kicker">03 / Experience</p>
+          <h2 id="experience-title">What I do</h2>
+          <div class="section-content"><ul class="role-list"><li>CEO &amp; Founder at JIM TECH</li><li>Technology Trainer</li></ul></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <p class="section-kicker">04 / Toolkit</p>
+          <h2 id="skills-title">Skills in progress</h2>
+          <div class="section-content"><ul class="skill-list">
+            <li>IT development</li><li>Wireframing</li><li>Figma</li><li>UI/UX design</li><li>Hardware repair</li><li>Mobile applications</li>
+          </ul></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="awards-title">
+        <div class="section-heading">
+          <p class="section-kicker">05 / Growth</p>
+          <h2 id="awards-title">Awards &amp; certifications</h2>
+          <div class="section-content"><ul class="certificate-list">
+            <li>Finding your first client — LinkedIn Learning, September 2026</li>
+            <li>Managing negative emotions — LinkedIn Learning, September 2026</li>
+            <li>Mobile development for beginners — D-CLIC IOF</li>
+            <li>Using computer science</li>
+          </ul></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="more-title">
+        <div class="section-heading">
+          <p class="section-kicker">06 / More</p>
+          <h2 id="more-title">Beyond the screen</h2>
+          <div class="section-content other-links">
+            <a class="button secondary" href="hobbies.html">My hobbies ↗</a>
+            <a class="button secondary" href="contact.html">Contact me ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>© Jephte Iniki. All rights reserved.</p></footer>
+  </div>
+</body>
+</html>
