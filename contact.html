@@ -1,18 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact me !</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f3ee">
+  <title>Contact — Jephte Iniki</title>
+  <style>
+    :root { color-scheme: light; --ink:#192923; --muted:#68756e; --paper:#f5f3ee; --surface:#fffefa; --line:#e7e5dc; --accent:#b8ef73; --accent-dark:#345b30; --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.65; }
+    a { color:inherit; }
+    .page-shell { width:min(1080px,calc(100% - 40px)); min-height:100vh; margin:0 auto; display:flex; flex-direction:column; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; padding:26px 0; border-bottom:1px solid var(--line); font-size:.88rem; }
+    .brand { font-weight:750; letter-spacing:-.03em; text-decoration:none; }
+    .availability { color:var(--muted); }
+    .availability::before { content:''; display:inline-block; width:8px; height:8px; margin-right:9px; border-radius:50%; background:#7ebd54; box-shadow:0 0 0 4px #e4efd9; }
+    main { flex:1; padding:76px 0 90px; }
+    .eyebrow { margin:0 0 14px; color:var(--accent-dark); font-size:.76rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+    h1,h2,p { margin-top:0; }
+    h1 { max-width:720px; margin-bottom:18px; font-family:var(--serif); font-size:clamp(3rem,8vw,6rem); font-weight:500; letter-spacing:-.075em; line-height:.98; }
+    h1 span { color:#789b60; }
+    .intro { max-width:600px; margin-bottom:38px; color:var(--muted); font-size:1.08rem; }
+    .contact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .contact-card { min-height:170px; padding:23px; border:1px solid var(--line); border-radius:16px; background:var(--surface); text-decoration:none; transition:transform .2s ease,border-color .2s ease; }
+    .contact-card:hover { transform:translateY(-3px); border-color:#afbf9e; }
+    .contact-label { margin-bottom:23px; color:var(--muted); font-size:.78rem; font-weight:750; letter-spacing:.12em; text-transform:uppercase; }
+    .contact-value { margin:0; font-size:1rem; font-weight:650; overflow-wrap:anywhere; }
+    .contact-arrow { display:block; margin-top:8px; color:var(--accent-dark); }
+    .back-link { display:inline-block; margin-top:32px; color:var(--accent-dark); font-weight:700; text-decoration-thickness:1px; text-underline-offset:4px; }
+    footer { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 0 30px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+    footer p { margin:0; }
+    .social-links { display:flex; gap:10px; }
+    .social-link { display:grid; width:40px; height:40px; place-items:center; border:1px solid var(--line); border-radius:50%; background:var(--surface); color:var(--ink); transition:background .2s ease,transform .2s ease; }
+    .social-link:hover { transform:translateY(-2px); background:#edf4e8; }
+    .social-link svg { width:18px; height:18px; fill:currentColor; }
+    @media(max-width:700px) { .page-shell{width:min(100% - 32px,560px)} .topbar{padding:19px 0} main{padding:58px 0 68px} .contact-grid{grid-template-columns:1fr} .contact-card{min-height:unset} footer{align-items:flex-start;flex-direction:column} }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after{transition-duration:.01ms!important} }
+  </style>
 </head>
 <body>
-    <h1>Mes coordonnees</h1>
-    <hr>
-
-    <h3>Contactez nous !</h3>
-    <p>Email: inikijephte5@gmail.com</p>
-    <p>Phone: +243 84 00 58 468</p>
-    <p>Address: Kinshasa, Democratic Republic of Congo</p>
-  <hr>   
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Jephte Iniki, accueil">JI<span aria-hidden="true">.</span></a>
+      <span class="availability">Étudiant en développement logiciel</span>
+    </header>
+    <main>
+      <p class="eyebrow">Faisons connaissance</p>
+      <h1>Parlons de votre <span>projet.</span></h1>
+      <p class="intro">Une question, une idée ou une occasion de collaborer ? Vous pouvez me joindre par e-mail, par téléphone ou me retrouver sur les réseaux.</p>
+      <section class="contact-grid" aria-label="Coordonnées">
+        <a class="contact-card" href="mailto:inikijephte5@gmail.com"><p class="contact-label">E-mail</p><p class="contact-value">inikijephte5@gmail.com</p><span class="contact-arrow" aria-hidden="true">Écrire un message ↗</span></a>
+        <a class="contact-card" href="tel:+243840058468"><p class="contact-label">Téléphone</p><p class="contact-value">+243 84 00 58 468</p><span class="contact-arrow" aria-hidden="true">Appeler ↗</span></a>
+        <div class="contact-card"><p class="contact-label">Localisation</p><p class="contact-value">Kinshasa, République démocratique du Congo</p></div>
+      </section>
+      <a class="back-link" href="index.html">← Retour au portfolio</a>
+    </main>
+ 
+   
+  </div>
 </body>
 </html>

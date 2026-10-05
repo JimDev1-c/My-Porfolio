@@ -1,22 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes hobbies</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f3ee">
+  <title>Mes loisirs — Jephte Iniki</title>
+  <style>
+    :root { color-scheme:light; --ink:#192923; --muted:#68756e; --paper:#f5f3ee; --surface:#fffefa; --line:#e7e5dc; --accent:#b8ef73; --accent-dark:#345b30; --serif:Georgia,'Times New Roman',serif; --sans:'Segoe UI',Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.65; }
+    a { color:inherit; }
+    .page-shell { width:min(1080px,calc(100% - 40px)); min-height:100vh; margin:0 auto; display:flex; flex-direction:column; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; padding:26px 0; border-bottom:1px solid var(--line); font-size:.88rem; }
+    .brand { font-weight:750; letter-spacing:-.03em; text-decoration:none; }
+    .availability { color:var(--muted); }
+    .availability::before { content:''; display:inline-block; width:8px; height:8px; margin-right:9px; border-radius:50%; background:#7ebd54; box-shadow:0 0 0 4px #e4efd9; }
+    main { flex:1; padding:76px 0 90px; }
+    .eyebrow { margin:0 0 14px; color:var(--accent-dark); font-size:.76rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+    h1,p { margin-top:0; }
+    h1 { max-width:720px; margin-bottom:18px; font-family:var(--serif); font-size:clamp(3rem,8vw,6rem); font-weight:500; letter-spacing:-.075em; line-height:.98; }
+    h1 span { color:#789b60; }
+    .intro { max-width:600px; margin-bottom:38px; color:var(--muted); font-size:1.08rem; }
+    .hobby-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:0; padding:0; list-style:none; }
+    .hobby-card { min-height:175px; display:flex; flex-direction:column; justify-content:space-between; padding:22px; border:1px solid var(--line); border-radius:16px; background:var(--surface); transition:transform .2s ease,border-color .2s ease; }
+    .hobby-card:hover { transform:translateY(-3px); border-color:#afbf9e; }
+    .hobby-number { color:#789b60; font-size:.78rem; font-weight:800; letter-spacing:.12em; }
+    .hobby-name { margin:24px 0 0; font-family:var(--serif); font-size:1.45rem; letter-spacing:-.03em; }
+    .back-link { display:inline-block; margin-top:32px; color:var(--accent-dark); font-weight:700; text-decoration-thickness:1px; text-underline-offset:4px; }
+    footer { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 0 30px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+    footer p { margin:0; }
+    .social-links { display:flex; gap:10px; }
+    .social-link { display:grid; width:40px; height:40px; place-items:center; border:1px solid var(--line); border-radius:50%; background:var(--surface); color:var(--ink); transition:background .2s ease,transform .2s ease; }
+    .social-link:hover { transform:translateY(-2px); background:#edf4e8; }
+    .social-link svg { width:18px; height:18px; fill:currentColor; }
+    @media(max-width:700px) { .page-shell{width:min(100% - 32px,560px)} .topbar{padding:19px 0} main{padding:58px 0 68px} .hobby-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .hobby-card{min-height:150px;padding:18px} footer{align-items:flex-start;flex-direction:column} }
+    @media(max-width:420px) { .hobby-grid{grid-template-columns:1fr} }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after{transition-duration:.01ms!important} }
+  </style>
 </head>
 <body>
-    <h1>Mes hobbies</h1>
-
-    <hr>
-    <ul>
-        <li>Jeu Videos</li>
-        <li>Football</li>
-        <li>BasketBall</li>
-        <li>Billard</li>
-        <li>Lecture axe sur la tech</li>
-        <li>English club</li>
-    </ul>
-    <hr>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Jephte Iniki, accueil">JI<span aria-hidden="true">.</span></a>
+      <span class="availability">Étudiant en développement logiciel</span>
+    </header>
+    <main>
+      <p class="eyebrow">En dehors du code</p>
+      <h1>Ce que j’aime <span>faire.</span></h1>
+      <p class="intro">Mes loisirs m’aident à rester curieux, à apprendre et à garder un bon équilibre au quotidien.</p>
+      <ul class="hobby-grid" aria-label="Mes loisirs">
+        <li class="hobby-card"><span class="hobby-number">01</span><p class="hobby-name">Jeux vidéo</p></li>
+        <li class="hobby-card"><span class="hobby-number">02</span><p class="hobby-name">Football</p></li>
+        <li class="hobby-card"><span class="hobby-number">03</span><p class="hobby-name">Basketball</p></li>
+        <li class="hobby-card"><span class="hobby-number">04</span><p class="hobby-name">Billard</p></li>
+        <li class="hobby-card"><span class="hobby-number">05</span><p class="hobby-name">Lecture autour de la tech</p></li>
+        <li class="hobby-card"><span class="hobby-number">06</span><p class="hobby-name">English club</p></li>
+      </ul>
+      <a class="back-link" href="index.html">← Retour au portfolio</a>
+    </main>
+    <footer>
+      <p>© Jephte Iniki. Tous droits réservés.</p>
+      <nav class="social-links" aria-label="Réseaux sociaux">
+        <a class="social-link" href="https://www.linkedin.com/in/jephte-iniki-mr-jim-00302b398/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Btid9mS0PSFuWkWZpd5mZUQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.09h2.97v9.25ZM6.44 7.83a1.72 1.72 0 1 1 .02-3.44 1.72 1.72 0 0 1-.02 3.44Zm11.9 10.51h-2.96v-4.5c0-1.07-.02-2.44-1.49-2.44-1.49 0-1.72 1.16-1.72 2.36v4.58H9.2V9.09h2.85v1.26h.04c.4-.73 1.37-1.5 2.82-1.5 3.01 0 3.57 1.98 3.57 4.56v4.93Z"/></svg></a>
+        <a class="social-link" href="https://https://github.com/JimDev1-c" target="_blank" rel="noopener noreferrer" aria-label="Mon Profil GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.61 1.21 3.25.92.1-.72.39-1.21.71-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.27-2.61 5.21-5.09 5.49.4.35.76 1.02.76 2.06v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></a>
+        <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Mon Profil Instagram "><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.1 2A3.1 3.1 0 0 0 4 7.1v9.8A3.1 3.1 0 0 0 7.1 20h9.8a3.1 3.1 0 0 0 3.1-3.1V7.1A3.1 3.1 0 0 0 16.9 4H7.1ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.2-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg></a>
+      </nav>
+    </footer>
+  </div>
 </body>
 </html>
