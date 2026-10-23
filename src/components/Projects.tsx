@@ -75,7 +75,16 @@ function ProjectPreview({ mark, name, label }: { mark: string; name: string; lab
   return (
     <div className="project-art" role="img" aria-label={label}>
       <span className="preview-caption">{name}</span>
-      {mark === 'Refresh Game' ? (
+      {mark === 'SmartResto' ? (
+        <div className="restaurant-preview" aria-hidden="true">
+          <div className="restaurant-preview-header"><span /><span /><span /></div>
+          <div className="restaurant-preview-columns">
+            <div><b /><i /><i /></div>
+            <div><b /><i /><i /></div>
+            <div><b /><i /><i /></div>
+          </div>
+        </div>
+      ) : mark === 'Refresh Game' ? (
         <div className="dice-preview" aria-hidden="true">
           <span className="preview-die preview-die-one">⚄</span>
           <span className="preview-versus">VS</span>

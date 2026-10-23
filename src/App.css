@@ -373,40 +373,64 @@
 }
 
 .about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, .85fr);
+  gap: 22px;
   margin-left: 250px;
 }
 
-.about-layout > .section-copy {
-  max-width: 700px;
-  margin: 0 0 18px;
-}
-
-.about-highlights {
+.about-biography {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  align-content: start;
+  gap: 18px;
 }
 
-.about-highlights li {
-  padding: 16px;
+.about-paragraph {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.85;
+}
+
+.about-paragraph:first-child {
+  padding-left: 16px;
+  border-left: 3px solid var(--accent-dark);
+  color: var(--ink);
+  font-size: 1.04rem;
+  font-weight: 550;
+}
+
+.about-philosophy {
+  align-self: start;
+  padding: 22px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--surface);
 }
 
-.about-highlights h3 {
-  margin: 0 0 7px;
-  font-size: .9rem;
+.about-philosophy-label {
+  margin: 0 0 16px;
+  color: var(--accent-dark);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
-.about-highlights p {
+.about-philosophy blockquote {
   margin: 0;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.about-philosophy-tags {
+  margin: 18px 0 0;
   color: var(--muted);
-  font-size: .82rem;
-  line-height: 1.55;
+  font-size: .78rem;
+  font-weight: 650;
 }
 
 .card-grid {
@@ -675,9 +699,9 @@
 
 .hobby-grid {
   display: grid;
-  grid-auto-columns: minmax(190px, 240px);
+  grid-auto-columns: minmax(160px, 190px);
   grid-auto-flow: column;
-  gap: 14px;
+  gap: 11px;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   margin: 0 0 0 250px;
@@ -707,14 +731,32 @@
 
 .hobby-card {
   display: flex;
-  min-height: 115px;
+  min-height: 94px;
   flex-direction: column;
   justify-content: space-between;
-  padding: 18px;
+  gap: 12px;
+  padding: 14px;
   border: 1px solid var(--line);
-  border-radius: 15px;
+  border-radius: 12px;
   background: var(--surface);
   transition: transform .2s ease, border-color .2s ease;
+}
+
+.hobby-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hobby-icon {
+  width: 29px;
+  height: 29px;
+  color: #66894f;
+}
+
+.hobby-name {
+  font-family: var(--serif);
+  font-size: .98rem;
 }
 
 .hobby-card:hover {
@@ -799,6 +841,65 @@
 
 .project-card-3 .project-art {
   background: linear-gradient(135deg, #789b60, #345b30);
+}
+
+.project-card-4 .project-art {
+  background: linear-gradient(135deg, #8b6848, #493825);
+}
+
+.restaurant-preview {
+  z-index: 1;
+  width: min(100%, 300px);
+  padding: 13px;
+  border: 1px solid rgb(255 255 255 / 34%);
+  border-radius: 12px;
+  background: #fffefa;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 24%);
+}
+
+.restaurant-preview-header {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.restaurant-preview-header span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b5a58e;
+}
+
+.restaurant-preview-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+.restaurant-preview-columns > div {
+  display: grid;
+  gap: 6px;
+  padding: 7px;
+  border-radius: 7px;
+  background: #f5f3ee;
+}
+
+.restaurant-preview-columns b,
+.restaurant-preview-columns i {
+  display: block;
+  height: 6px;
+  border-radius: 4px;
+  background: #9eae94;
+}
+
+.restaurant-preview-columns b {
+  width: 65%;
+  background: #345b30;
+}
+
+.restaurant-preview-columns i:last-child {
+  width: 72%;
+  background: #d8c4a9;
 }
 
 .preview-caption {
@@ -1339,6 +1440,10 @@
     margin-left: 207px;
   }
 
+  .about-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(210px, .8fr);
+  }
+
   .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1473,13 +1578,17 @@
     margin-left: 0;
   }
 
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
   .card-grid,
   .toolkit-grid {
     grid-template-columns: 1fr;
   }
 
   .hobby-grid {
-    grid-auto-columns: minmax(190px, 82%);
+    grid-auto-columns: minmax(155px, 72%);
   }
 
   .content-section {
@@ -1497,10 +1606,6 @@
 
   .project-scroll-hint {
     padding-right: 4px;
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr;
   }
 
   .contact-email {

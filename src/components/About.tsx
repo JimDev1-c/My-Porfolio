@@ -8,15 +8,16 @@ function About({ copy }: { copy: PortfolioCopy }) {
         <h2 id="profil-title">{copy.aboutTitle}</h2>
       </div>
       <div className="about-layout">
-        <p className="section-copy">{copy.aboutCopy}</p>
-        <ul className="about-highlights">
-          {copy.aboutHighlights.map((highlight) => (
-            <li key={highlight.title}>
-              <h3>{highlight.title}</h3>
-              <p>{highlight.description}</p>
-            </li>
+        <div className="about-biography">
+          {copy.aboutParagraphs.map((paragraph) => (
+            <p className="about-paragraph" key={paragraph}>{paragraph}</p>
           ))}
-        </ul>
+        </div>
+        <aside className="about-philosophy" aria-labelledby="about-philosophy-title">
+          <p className="about-philosophy-label" id="about-philosophy-title">{copy.aboutPhilosophyTitle}</p>
+          <blockquote>{copy.aboutPhilosophyQuote}</blockquote>
+          <p className="about-philosophy-tags">{copy.aboutPhilosophyTags}</p>
+        </aside>
       </div>
     </section>
   )
