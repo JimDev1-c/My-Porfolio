@@ -1596,12 +1596,40 @@
   }
 
   .project-art {
-    min-height: 175px;
+    min-height: 150px;
+    padding: 18px;
   }
 
   .project-grid {
-    grid-auto-columns: minmax(0, 86%);
+    grid-auto-columns: minmax(0, 92%);
     gap: 12px;
+    padding: 0 10px 16px 3px;
+    scroll-padding-inline: 3px;
+    scroll-snap-stop: always;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-body {
+    flex: 1;
+    padding: 16px;
+  }
+
+  .project-body h3 {
+    font-size: clamp(1.2rem, 5.5vw, 1.35rem);
+  }
+
+  .project-problem,
+  .project-description,
+  .project-scope {
+    overflow-wrap: anywhere;
+  }
+
+  .project-tags {
+    row-gap: 7px;
   }
 
   .project-scroll-hint {
@@ -1690,6 +1718,10 @@
   .toolkit-card,
   .project-body {
     padding: 17px;
+  }
+
+  .project-grid {
+    grid-auto-columns: minmax(0, 92%);
   }
 
   .footer-main {
