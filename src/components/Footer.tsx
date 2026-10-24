@@ -1,5 +1,4 @@
 import type { PortfolioCopy } from '../i18n'
-import SocialIcon from './SocialIcon'
 
 function Footer({ copy }: { copy: PortfolioCopy }) {
   return (

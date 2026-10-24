@@ -1,9 +1,6 @@
-import { useState } from 'react'
 import type { PortfolioCopy } from '../i18n'
 
 function Education({ copy }: { copy: PortfolioCopy }) {
-  const [isPaused, setIsPaused] = useState(false)
-
   return (
     <>
       <section className="content-section" id="parcours" aria-labelledby="education-title">
@@ -28,7 +25,7 @@ function Education({ copy }: { copy: PortfolioCopy }) {
         </div>
         <div className="certification-carousel">
           <div
-            className={`certification-window${isPaused ? ' is-paused' : ''}`}
+            className="certification-window"
             tabIndex={0}
             aria-label={copy.certificationTitle}
           >
