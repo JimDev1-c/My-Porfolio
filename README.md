@@ -27,9 +27,9 @@ Le défi principal a été de rendre le portfolio accessible en français et en 
 
 ## Comparaison visuelle maquette / site
 
-Les visuels de gauche sont les captures de référence fournies avec le brief. Ceux de droite sont des captures du site local, en français, prises le 24 octobre 2026 à une largeur de 960 px. Les captures illustrent l’état du code audité ; l’URL publiée est indiquée plus haut. Les captures de référence fournies sont des écrans desktop. Aucun visuel mobile Figma n’a été fourni, donc la fidélité mobile ne peut pas être comparée pixel à pixel.
+Les visuels de gauche reproduisent les écrans de la maquette Figma ; ceux de droite montrent le portfolio dans sa version locale en français, capturée le 24 octobre 2026 à une largeur de 960 px. Cette comparaison documente l’état de l’interface à cette date. La version publique est accessible via le lien du projet en tête de ce document. Les références Figma disponibles sont au format desktop ; aucune capture mobile de la maquette n’est incluse.
 
-| Section | Maquette Figma | Site audité |
+| Section | Maquette Figma | Site — capture locale |
 | --- | --- | --- |
 | Accueil | ![Maquette — accueil](docs/screenshots/figma/home-portfolio-jim.png) | ![Site — accueil](docs/screenshots/site/home-portfolio-jim.png) |
 | À propos | ![Maquette — à propos](docs/screenshots/figma/about-section.png) | ![Site — à propos](docs/screenshots/site/about-section.png) |
@@ -65,7 +65,7 @@ La capture mobile des projets est disponible dans `docs/screenshots/site/project
 
 ## Qualité Lighthouse — mobile
 
-Le brief fixe les objectifs suivants pour un audit Lighthouse mobile exécuté sur le site déployé :
+Les objectifs qualité retenus pour l’audit Lighthouse mobile du site déployé sont les suivants :
 
 | Catégorie | Objectif minimum | Résultat |
 | --- | ---: | --- |
@@ -76,14 +76,14 @@ Le brief fixe les objectifs suivants pour un audit Lighthouse mobile exécuté s
 
 ### Améliorations qualité intégrées
 
-- Les métadonnées HTML initiales correspondent désormais à la description française du portfolio et à son titre. L’URL canonique et l’URL Open Graph pointent vers le site déployé.
-- Le favicon utilise maintenant un fichier SVG avec le type MIME correspondant, au lieu d’une image JPEG déclarée comme SVG.
+- Les métadonnées HTML initiales reprennent la description française du portfolio et son titre. L’URL canonique et l’URL Open Graph pointent vers le site déployé.
+- Le favicon est fourni au format SVG et déclaré avec le type MIME correspondant.
 - Un lien d’accès direct au contenu principal permet de contourner la navigation au clavier, avec un libellé traduit selon la langue sélectionnée.
 - L’image du portrait, élément principal de la première vue, conserve ses dimensions déclarées et son chargement prioritaire. Les animations respectent la préférence système de réduction des mouvements.
 
-Le rapport Lighthouse mobile n’a pas pu être produit dans l’environnement de préparation : Lighthouse n’était pas installé et son téléchargement a échoué lors de la vérification TLS du registre npm ; la nouvelle tentative a ensuite signalé un problème de cache npm. Aucun score ni rapport n’est donc déclaré. La mesure reste à effectuer sur le site déployé après publication de ces changements, puis à joindre ici avec une explication pour tout score inférieur aux objectifs.
+Les scores Lighthouse mobiles ne sont pas mesurés dans cette version du dépôt et aucun rapport n’est inclus. Les valeurs restent indiquées comme non mesurées afin de ne pas présenter de résultats non vérifiés. Une future mesure pourra compléter ce tableau avec le rapport du site déployé et les explications associées aux scores inférieurs aux objectifs.
 
-Vérifications locales exécutées le 24 octobre 2026 : `npm run build` (réussi) et `npm run lint` (réussi). Elles ne remplacent pas une mesure Lighthouse du site publié.
+La compilation de production (`npm run build`) et l’analyse statique (`npm run lint`) ont été exécutées avec succès le 24 octobre 2026. Ces vérifications du code source sont distinctes de l’audit Lighthouse du site en ligne.
 
 ## Lancer le projet en local
 
@@ -115,5 +115,3 @@ Vite affiche l’adresse locale dans le terminal. La compilation de production e
 - `src/assets/` contient les ressources graphiques importées.
 - `docs/screenshots/figma/` et `docs/screenshots/site/` regroupent les captures utilisées pour la comparaison.
 - `index.html` définit le document et ses métadonnées initiales.
-
-Les aperçus des projets sont des illustrations d’interface, pas des captures d’applications. Les projets sans lien public sont identifiés comme locaux ou en cours. Les recommandations ne sont publiées qu’avec une attribution vérifiable et l’accord de leur auteur.
