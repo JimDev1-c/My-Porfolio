@@ -3,6 +3,23 @@
   margin: 0 auto;
 }
 
+.skip-link {
+  position: fixed;
+  z-index: 20;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  transform: translateY(calc(-100% - 16px));
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--surface);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .site-header {
   position: sticky;
   z-index: 10;

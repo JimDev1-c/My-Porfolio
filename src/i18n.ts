@@ -2,6 +2,7 @@ export type Language = 'fr' | 'en'
 
 export const translations = {
   fr: {
+    skipToContent: 'Aller au contenu principal',
     pageTitle: 'Jephte Iniki — Portfolio',
     description: 'Portfolio de Jephte Iniki, développeur web full stack, formateur en informatique et fondateur de JIM TECH à Kinshasa.',
     languageLabel: 'Langue',
@@ -197,6 +198,7 @@ export const translations = {
 
 
   en: {
+    skipToContent: 'Skip to main content',
     pageTitle: 'Jephte Iniki — Portfolio',
     description: 'Portfolio of Jephte Iniki, a full-stack web developer, IT trainer, and Founder of Jim Tech in Kinshasa.',
     languageLabel: 'Language',

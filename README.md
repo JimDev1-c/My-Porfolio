@@ -74,7 +74,14 @@ Le brief fixe les objectifs suivants pour un audit Lighthouse mobile exécuté s
 | Bonnes pratiques | 90 | Non mesuré |
 | SEO | 90 | Non mesuré |
 
-L’audit n’a pas abouti dans cet environnement : Lighthouse n’était pas installé et npm a refusé son téléchargement depuis le registre (erreur de certificat TLS, puis verrou de cache signalé comme compromis). Aucun score ni rapport n’est donc disponible. Il reste à exécuter Lighthouse en mode mobile sur le site déployé, à joindre la capture du rapport ici et à expliquer chaque score inférieur à l’objectif ainsi que les optimisations tentées.
+### Améliorations qualité intégrées
+
+- Les métadonnées HTML initiales correspondent désormais à la description française du portfolio et à son titre. L’URL canonique et l’URL Open Graph pointent vers le site déployé.
+- Le favicon utilise maintenant un fichier SVG avec le type MIME correspondant, au lieu d’une image JPEG déclarée comme SVG.
+- Un lien d’accès direct au contenu principal permet de contourner la navigation au clavier, avec un libellé traduit selon la langue sélectionnée.
+- L’image du portrait, élément principal de la première vue, conserve ses dimensions déclarées et son chargement prioritaire. Les animations respectent la préférence système de réduction des mouvements.
+
+Le rapport Lighthouse mobile n’a pas pu être produit dans l’environnement de préparation : Lighthouse n’était pas installé et son téléchargement a échoué lors de la vérification TLS du registre npm ; la nouvelle tentative a ensuite signalé un problème de cache npm. Aucun score ni rapport n’est donc déclaré. La mesure reste à effectuer sur le site déployé après publication de ces changements, puis à joindre ici avec une explication pour tout score inférieur aux objectifs.
 
 Vérifications locales exécutées le 24 octobre 2026 : `npm run build` (réussi) et `npm run lint` (réussi). Elles ne remplacent pas une mesure Lighthouse du site publié.
 

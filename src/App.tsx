@@ -29,8 +29,9 @@ function App() {
 
   return (
     <div className="site-shell" id="accueil">
+      <a className="skip-link" href="#contenu-principal">{copy.skipToContent}</a>
       <Header copy={copy} language={language} onLanguageChange={setLanguage} />
-      <main>
+      <main id="contenu-principal" tabIndex={-1}>
         <Hero copy={copy} />
         <About copy={copy} />
         <Education copy={copy} />
