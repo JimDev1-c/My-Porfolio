@@ -1639,10 +1639,18 @@
     font-size: clamp(1.2rem, 5.5vw, 1.35rem);
   }
 
+  .project-problem {
+    display: none;
+  }
+
   .project-problem,
   .project-description,
   .project-scope {
     overflow-wrap: anywhere;
+  }
+
+  .project-scope {
+    font-size: .72rem;
   }
 
   .project-tags {
