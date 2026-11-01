@@ -10,7 +10,8 @@ import Hobbies from './components/Hobbies'
 import Projects from './components/Projects'
 import Recommendations from './components/Recommendations'
 import Skills from './components/Skills.tsx'
-import { translations, type Language } from './i18n'
+import { type Language } from './i18n'
+import { translations } from "./translations.ts"
 import './App.css'
 
 function App() {

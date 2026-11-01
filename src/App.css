@@ -645,6 +645,22 @@
   font-size: .82rem;
 }
 
+.toolkit-tags li.is-in-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-color: #e6d9b8;
+  background: #f8f2e5;
+  color: #66532a;
+}
+
+.skill-status {
+  padding-left: 7px;
+  border-left: 1px solid currentColor;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
 .experience-timeline {
   position: relative;
   display: grid;
@@ -847,9 +863,24 @@
 
 .project-art::before {
   position: absolute;
+  z-index: 1;
   inset: 0;
   background: radial-gradient(circle at 85% 15%, rgb(255 255 255 / 14%), transparent 42%);
   content: '';
+}
+
+.project-art-has-image::before {
+  background: linear-gradient(180deg, rgb(15 24 21 / 32%), transparent 35%, transparent 62%, rgb(15 24 21 / 58%));
+  pointer-events: none;
+}
+
+.project-art-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .project-card-2 .project-art {

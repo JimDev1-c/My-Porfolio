@@ -13,6 +13,12 @@ function Skills({ copy }: { copy: PortfolioCopy }) {
             <h3>{group.title}</h3>
             <ul className="toolkit-tags">
               {group.items.map((skill) => <li key={skill}>{skill}</li>)}
+              {group.progressItems.map((skill) => (
+                <li className="is-in-progress" key={skill}>
+                  <span>{skill}</span>
+                  <span className="skill-status">{copy.skillProgressLabel}</span>
+                </li>
+              ))}
             </ul>
           </article>
         ))}

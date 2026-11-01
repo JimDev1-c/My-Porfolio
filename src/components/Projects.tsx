@@ -21,6 +21,7 @@ function Projects({ copy }: { copy: PortfolioCopy }) {
               mark={project.mark}
               name={project.name}
               label={project.previewLabel}
+              image={project.image ?? undefined}
             />
             <div className="project-body">
               <p className="project-category">{project.category}</p>
@@ -71,11 +72,23 @@ function Projects({ copy }: { copy: PortfolioCopy }) {
   )
 }
 
-function ProjectPreview({ mark, name, label }: { mark: string; name: string; label: string }) {
+function ProjectPreview({
+  mark,
+  name,
+  label,
+  image,
+}: {
+  mark: string
+  name: string
+  label: string
+  image?: string
+}) {
   return (
-    <div className="project-art" role="img" aria-label={label}>
+    <div className={`project-art${image ? ' project-art-has-image' : ''}`} role="img" aria-label={label}>
       <span className="preview-caption">{name}</span>
-      {mark === 'SmartResto' ? (
+      {image ? (
+        <img className="project-art-image" src={image} alt="" loading="lazy" decoding="async" />
+      ) : mark === 'SmartResto' ? (
         <div className="restaurant-preview" aria-hidden="true">
           <div className="restaurant-preview-header"><span /><span /><span /></div>
           <div className="restaurant-preview-columns">
