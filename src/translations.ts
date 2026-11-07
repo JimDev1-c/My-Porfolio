@@ -106,6 +106,20 @@ export const translations = {
     projectsScrollHint: 'Faites défiler les cartes horizontalement ou utilisez les flèches du clavier lorsque cette liste est sélectionnée.',
     projectGoalLabel: 'Besoin traité',
     projects: [
+         {
+        name: 'Allo Presta',
+        category: 'Application Next.js',
+        problem: 'Mission : simplifier la mise en relation entre prestataires et clients, avec un parcours utilisateur clair.',
+        description: 'Une plateforme securisee pour connecter les besoins de la population congolaise aux talents locaux , trouver facilement un prestataire de confiance pour des services a domicile (aide-menagere , coiffeuse , professeur , etc.., reste un vrai casse-tete',
+        technologies: ['Next.js', 'Fast API', 'Prisma'],
+        url: 'https://alloprestardc.thevinemalebe3.workers.dev/',
+        action: 'Voir la démo',
+        sourceUrl: null,
+        status: 'Travail en equipe : le projet est deja mise en ligne dans sa version V1.0.0, le projet est en constante evolution et sera mis a jour avec de nouvelles fonctionnalites et des corrections de bugs.',
+        mark: 'Allo Presta',
+        previewLabel: 'Capture de l’application Allo Presta en fonctionnement',
+        image: '/images/alloPresta.png',
+      },
       {
         name: 'TF',
         category: 'Application React',
@@ -308,6 +322,20 @@ export const translations = {
     projectsScrollHint: 'Scroll horizontally through the cards, or use the arrow keys when this list is focused.',
     projectGoalLabel: 'Problem addressed',
     projects: [
+         {
+        name: 'Allo Presta',
+        category: ' Next.js Application',
+        problem: 'Mission : simplifier la mise en relation entre prestataires et clients, avec un parcours utilisateur clair . ',
+        description: 'Une plateforme securisee pour connecter les besoins de la population congolaise aux talents locaux , trouver facilement un prestataire de confiance pour des services a domicile (aide-menagere , coiffeuse , professeur , etc.., reste un vrai casse-tete',
+        technologies: ['Next.js', 'Fast API', 'Prisma'],
+        url: 'https://alloprestardc.thevinemalebe3.workers.dev/',
+        action: 'Voir la démo',
+        sourceUrl: null,
+        status: 'Travail en equipe : le projet est deja mise en ligne dans sa version V1.0.0, le projet est en constante evolution et sera mis a jour avec de nouvelles fonctionnalites et des corrections de bugs.',
+        mark: 'Allo Presta',
+        previewLabel: 'Capture de l’application Allo Presta en fonctionnement',
+        image: '/images/alloPresta.png',
+      },
       {
         name: 'TF',
         category: 'React application',
